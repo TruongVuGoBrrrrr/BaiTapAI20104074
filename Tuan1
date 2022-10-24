@@ -1,0 +1,61 @@
+with open('text.txt',mode='w') as accounts:
+  accounts.write('1 Nguyen Van A 8.0\n')
+  accounts.write('2 Le Thi B 6.8\n')
+  
+with open('text1.txt',mode='w') as accounts:
+ print('7:00 Nguyen Van A',file=accounts)
+ print('7:01 Le Thi B',file=accounts)
+ 
+ with open('text.txt',mode='v') as accounts:
+  print(f'{'name':<20}{'score':>20}')
+  for record in accounts:
+    'name','score'=record.split()
+    print(f'{'name':<20}{'score':>20}')
+    
+    import pandas as pd
+url='/Dulieu1.csv'
+dataframe = pd.read_csv(url)
+dataframe.head(10)
+
+import pandas as pd
+dataframe = pd.DataFrame() #Tao Khung
+dataframe ['Name']=['Nguyen Van A','Le Thi B']
+dataframe ['Student ID']=[20104074,20104075]
+dataframe ['score']=[8.0,9.0]
+dataframe
+
+import pandas as pd
+url='/Book4.csv'
+dataframe = pd.read_csv(url)
+dataframe.head(20)
+dataframe=dataframe.set_index(dataframe['ho va ten'])
+dataframe.loc['Tran Van A']
+import pandas as pd
+url='/Dulieu2.csv'
+dataframe=pd.read_csv(url)
+dataframe.head(20)
+dataframe[dataframe['khoa']=='Ckm'].head(20)
+
+import pandas as pd
+url = '/Book4.csv'
+dataframe=pd.read_csv(url)
+dataframe.head(10)
+dataframe[dataframe['khoa']=='CKM'].head(5)
+
+import pandas as pd
+url = '/Book4.csv'
+dataframe=pd.read_csv(url)
+dataframe.head(10)
+dataframe.drop('khoa',axis=1)
+#lenh drop chua xong
+
+import pandas as pd
+url = '/Book4.csv'
+dataframe=pd.read_csv(url)
+dataframe.head(10)
+dataframe.groupby('khoa').mean()
+
+import pandas as pd
+url = 'http://winterolympicsmedals.com/medals.csv'
+data=pd.read_csv(url)
+data['NOC'].unique()
